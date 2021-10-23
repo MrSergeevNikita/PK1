@@ -1,4 +1,4 @@
-# CD, CD-библеотека
+# CD, CD-библиотека
 
 from operator import itemgetter
 
@@ -12,20 +12,20 @@ class CD:
         self.cd_lib_id = cd_lib_id
 
 class CD_Library:
-    """CD-Библеотека"""
+    """CD-Библиотека"""
 
     def __init__(self, id, name):
         self.id = id
         self.name = name
 
 class CD_v_library:
-    """Диск в библеотеке для реализации связи многие-ко-многим"""
+    """Диск в библиотеке для реализации связи многие-ко-многим"""
 
     def __init__(self, cd_id, library_id):
         self.cd_id = cd_id
         self.library_id = library_id
 
-# библеотека
+# библиотека
 library = [
     CD_Library(1, 'Музыкальные клипы'),
     CD_Library(2, 'Игры'),
@@ -86,11 +86,11 @@ def main():
 
     print('Задание Г2')
     res_12_unsorted = []
-    # Перебираем все библеотеки
+    # Перебираем все библиотеки
     for d in library :
-        # Список CD в библеотеке
+        # Список CD в библиотеке
         d_libr = list(filter(lambda i: i[2] == d.name, one_to_many))
-        # Если библеотека не пустая
+        # Если библиотека не пустая
         if len(d_libr) > 0:
             res_12_unsorted.append((d.name, max(d_libr, key=lambda x: x[1])[1]))
     # Сортировка по максимальной стоимости
